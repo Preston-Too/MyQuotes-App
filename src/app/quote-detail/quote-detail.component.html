@@ -1,1 +1,21 @@
-<p>quote-detail works!</p>
+<div class="card-body card-body-cascade text-center">
+
+    <h6 class="card-title"highlight><strong>{{quote.author}}</strong></h6>
+  
+    <p class="card-text"><em>"{{quote.quoteDescription}}."</em>
+    </p>
+     <p class="card-text">Submitted by: {{quote.name}}.
+    </p>
+
+    <div class="row">
+        <div class="col-6">
+            <p> Upvote: {{quote.upvote}}</p>
+        </div>
+        <div class="col-6">
+            <p>Downvote: {{quote.downvote}}</p>
+        </div>
+    </div>
+    <p>Active For: {{quote.date | dateCount}} Days</p>
+
+
+</div>
