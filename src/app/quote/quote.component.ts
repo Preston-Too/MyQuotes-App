@@ -11,10 +11,13 @@ export class QuoteComponent implements OnInit {
     new Quotes('Preston', 'Mutahi Kagwe', 'If we behave normally,Covid-19 disease will treat us upnormally.', new Date('2020/10/4')),
     new Quotes('Alex', 'Barack Obama', 'If you’re walking down the right path and you’re willing to keep walking, eventually you’ll make progress', new Date('2020/9/2')),
     new Quotes('Luciah', 'Mahatma Gandhi', 'Live as if you were to die tomorrow. Learn as if you were to live forever.', new Date('2020/10/13')),
-    new Quotes('Ronald', 'Lionel Messi', 'You have to fight to reach your dream. You have to sacrifice and work hard for it', new Date('2020/8/26'))
     
   ]
   
+  less: number;
+  many: number;
+  numCount: number;
+
   upvote(i) {
     this.quotes[i].upvote++
   }
@@ -33,4 +36,13 @@ export class QuoteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+getHighestUpVote() {
+    this.less = 0
+    this.many = 0
+    for (this.numCount = 0; this.numCount < this.quotes.length; this.numCount++) {
+      this.many = this.quotes[this.numCount].upvote;
+      if (this.many > this.less) { this.less = this.many }
+    }
+    return this.less
+  }
 }
